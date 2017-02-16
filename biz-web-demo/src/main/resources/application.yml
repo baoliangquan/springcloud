@@ -1,0 +1,18 @@
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+    #metadata-map:
+    #  cluster: MAIN
+  client:
+      serviceUrl:
+        defaultZone: http://localhost:52001/eureka/,http://localhost:52002/eureka/
+
+
+

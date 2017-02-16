@@ -1,0 +1,26 @@
+server:
+  port: 53001
+  
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+    #hostname: 127.0.0.1
+    nonSecurePort: 80
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:52001/eureka/,http://localhost:52002/eureka/
+
+turbine:
+  appConfig: web-demo
+  #instanceUrlSuffix: :9091/hystrix.stream
+  #aggregator:
+  #  clusterConfig: MAIN
+  clusterNameExpression: new String("default")
+  combineHostPort: true

@@ -1,0 +1,9 @@
+server:
+  port: 9091
+
+spring:
+  application:
+    name: web-demo
+  cloud:
+    config:
+      uri: http://192.168.0.195:56321/

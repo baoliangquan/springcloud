@@ -1,0 +1,44 @@
+server:
+  port: 51001
+
+management:
+  context-path: /admin
+  
+logging:
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    statusPageUrlPath: /info
+    healthCheckUrlPath: /health
+
+spring:
+  rabbitmq:
+    host: 192.168.0.195
+    port: 5672
+    username: yoara
+    password: yoara
+  cloud:
+    config:
+      server:
+        svn:
+          uri: https://192.168.0.250/svn/xinfang/trunk/test
+          username: wulesheng
+          password: 123456
+  profiles:
+    active: subversion
+---
+spring:
+  profiles: cloud
+eureka:
+  password: password
+  instance:
+    hostname: ${vcap.application.uris[0]}
+    nonSecurePort: 80
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.${PREFIX:}eureka.credentials.uri:http://user:${eureka.password:}@${PREFIX:}eureka.${application.domain:cfapps.io}}/eureka/
+

@@ -13,5 +13,3 @@ eureka:
       serviceUrl:
         defaultZone: http://localhost:52001/eureka/,http://localhost:52002/eureka/
 
-
-

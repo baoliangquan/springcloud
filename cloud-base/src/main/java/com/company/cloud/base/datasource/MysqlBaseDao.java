@@ -1,4 +1,4 @@
-package com.company.cloud.base.datasource.mybatis;
+package com.company.cloud.base.datasource;
 
 
 import com.company.cloud.base.model.Pagination;

@@ -1,5 +1,6 @@
 package com.company.cloud.base.datasource.mybatis;
 
+import com.company.cloud.base.datasource.MysqlBaseDao;
 import com.company.cloud.base.datasource.mybatis.interceptor.PaginationInterceptor;
 import com.company.cloud.base.model.Pagination;
 import org.apache.ibatis.session.ExecutorType;
